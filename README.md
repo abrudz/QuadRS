@@ -29,5 +29,5 @@ export MAXWS=128M WSPATH=$DYALOG/ws
 	echo "{}2⎕FIX'file:///opt/QuadRS/Run.dyalog'"
 	echo "'.code.tio'('S'Run '$1')'.input.tio'"
 	echo
-} | $DYALOG/dyalog
+} | $DYALOG/dyalog -script
 ```
