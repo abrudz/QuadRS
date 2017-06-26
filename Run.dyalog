@@ -8,10 +8,7 @@
      regexes←⎕NGET regexes 1
  :EndTrap
 
- :Trap 11 22 ⍝ accept filename or actual options
-     options←⎕NGET options
- :EndTrap
- options←(0⍴⊂⍬),('Greedy' 0)('IC' 1)('Mode' 'D')('Mode' 'M')('DotAll' '1')('UCP' 1)('OM')/⍨'GIDM.UO'∊options
+options←(0⍴⊂⍬),('Greedy' 0)('IC' 1)('Mode' 'D')('Mode' 'M')('DotAll' '1')('UCP' 1)('OM')/⍨'gidmauo'∊819⌶options~' -'
 
  :If 2|≢regexes
  :OrIf '⍵'∊⊃⌽regexes

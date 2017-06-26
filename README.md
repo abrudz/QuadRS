@@ -12,7 +12,7 @@ export MAXWS=128M WSPATH=$DYALOG/ws
 {
 	echo "⎕PW←9999"
 	echo "{}2⎕FIX'file:///opt/QuadRS/Run.dyalog'"
-	echo "'.code.tio'('R'Run '$1')'.input.tio'"
+	echo "'.code.tio'('R'Run '$@')'.input.tio'"
 	echo
 } | $DYALOG/dyalog -script
 ```
@@ -27,7 +27,7 @@ export MAXWS=128M WSPATH=$DYALOG/ws
 {
 	echo "⎕PW←9999"
 	echo "{}2⎕FIX'file:///opt/QuadRS/Run.dyalog'"
-	echo "'.code.tio'('S'Run '$1')'.input.tio'"
+	echo "'.code.tio'('S'Run '$@')'.input.tio'"
 	echo
 } | $DYALOG/dyalog -script
 ```
