@@ -1,8 +1,29 @@
 # QuadRS
 Thin covers for Dyalog APL's ⎕R and ⎕S
 
-### TIO wrapper for ⎕R
-
+## ⎕R
+### TIO languages.json entry
+```
+			"quad-r": {
+				"name": "Replace (Dyalog APL)",
+				"encoding": "SBCS",
+				"link": "http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm",
+				"prettify": "apl",
+				"update": "manual",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "\nHello, World!"
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
+```
+### TIO wrapper
 ```
 #!/usr/bin/env bash
 
@@ -17,7 +38,29 @@ export MAXWS=128M WSPATH=$DYALOG/ws
 } | $DYALOG/dyalog -script
 ```
 
-### TIO wrapper for ⎕S
+## ⎕S
+### TIO languages.json entry
+```
+			"quad-s": {
+				"name": "Search (Dyalog APL)",
+				"encoding": "SBCS",
+				"link": "http://help.dyalog.com/16.0/Content/Language/System%20Functions/s.htm",
+				"prettify": "apl",
+				"update": "manual",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "\nHello, World!"
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
+```
+### TIO wrapper
 ```
 #!/usr/bin/env bash
 
