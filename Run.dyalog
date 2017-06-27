@@ -8,13 +8,14 @@
      regexes←⊃⎕NGET regexes 1
  :EndTrap
 
-options←('ResultText' 'Simple')('Greedy' 0)('IC' 1)('Mode' 'D')('Mode' 'M')('DotAll' '1')('UCP' 1)('OM')/⍨1,'gidmauo'∊819⌶options~' -'
+ options←('ResultText' 'Simple')('Greedy' 0)('IC' 1)('Mode' 'D')('Mode' 'M')('DotAll' '1')('UCP' 1)('OM' 1)/⍨1,'gidmauo'∊819⌶options~' -'
+ options↓⍨←∨/'Ss'∊op
 
  :If 2|≢regexes
  :OrIf '⍵'∊⊃⌽regexes
      from←¯1↓regexes
      :If ~'⍵'∊⊃⌽regexes
-     Expand←'⍵B' '⍵b' '⍵P' '⍵p' '⍵M' '⍵O' '⍵L' '⍵N'⎕R'⍵.Block' '⍵.BlockNum' '⍵.Pattern' '⍵.PatternNum' '⍵.Match' '⍵.Offsets' '⍵.Lengths' '⍵.Names'
+         Expand←'⍵B' '⍵b' '⍵P' '⍵p' '⍵M' '⍵O' '⍵L' '⍵N'⎕R'⍵.Block' '⍵.BlockNum' '⍵.Pattern' '⍵.PatternNum' '⍵.Match' '⍵.Offsets' '⍵.Lengths' '⍵.Names'
      :OrIf ~≡⎕FX'to←{,⍕{'(Expand⊃⌽regexes)'}⍵}'
          to←⊃⌽regexes
      :EndIf
