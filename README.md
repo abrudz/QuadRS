@@ -1,5 +1,11 @@
 # QuadR and QuadS
-These are two closely related golfing languages. They are barely more than thin covers for [Dyalog APL](https://www.dyalog.com/)'s ⎕R [Replace operator](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm) and ⎕S [Search operator](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm) but with some enhancements for golfing purposes. They are based on PCRE, but enhanced by Dyalog to include application of custom regular expressions-style transformations and arbitrary APL code (including preservation of information from call to call) on each match.
+
+## Introduction
+These are two closely related golfing languages which each are barely more than thin covers for [Dyalog APL](https://www.dyalog.com/)'s ⎕R [Replace operator](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm) and ⎕S [Search operator](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm). These operators are based on PCRE, but enhanced by Dyalog to include application of custom regular expressions-style transformations and arbitrary APL code (including preservation of information from call to call) on each match.
+
+QuadR and QuadS code can in fact easily be translated to normal Dyalog APL. See [Arguments](https://github.com/abrudz/QuadRS#arguments) for information on how to do that.
+
+Feel free to contact me, [`@Adám`](https://stackexchange.com/users/3114363/ad%C3%A1m) in Stack Exchange's [APL chat room](https://chat.stackexchange.com/rooms/52405/apl) to learn more about QuadR, QuadS, and Dyalog APL.
 
 ## Guide
 
@@ -23,10 +29,12 @@ If the last line of Code includes the character `⍵` (U+2375; APL Functional Sy
  - `⍵L` is shorthand for `⍵.Lengths`
  - `⍵N` is shorthand for `⍵.Names`
 
-The result of the transformation function will be formatted and raveled before returning the result to ⎕R or ⎕S.
+QuadR will format and raveled the result of the transformation function before returning its result to ⎕R, since ⎕R's transformation function must return a simple character vector (string).
 
 See [the documention](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm) under **Transformation Function** for details.
- 
+
+Optionally, the Code may be have one or more lines of post-processing function bodies. Like the transformation function, these are identified by the precence of `⍵`, and curly braces are added automatically. The post processing functions will be applied bottom-up: The last post-processing function will be applied to the result of ⎕R or ⎕S, and then the second-to-last will be applied to the result of that, etc. See [here](https://codegolf.stackexchange.com/a/128722/43319) for an example use of a post-processing function.
+
 ### Input
 This is the input document – the data which is to be modified. Leave this blank for programs that produce output without input.
  
@@ -45,9 +53,11 @@ See [the Options documention](http://help.dyalog.com/16.0/Content/Language/Syste
 
 The entire search/replace call can optionally be repeated by adding a numeric argument, or until no furthor transformations can be done by adding the argument `≡`. This is equivalent to appending `⍣N` or `⍣≡` in Dyalog APL.
 
+`?` is a special Argument which instead of running the Code, will return a proper APL function equivalent to the Code, including Arguments and post-processing functions if applicable. Use this tool to learn the proper syntax of ⎕R and ⎕S.
+
 ### Output
 
-Is the result of the transformed input, for QuadR, and a formatted list
+Is the result of the transformed input for QuadR, and a formatted list or QuadS. QuadS will merge the list elements together, padding with [fill elements](http://help.dyalog.com/16.0/Content/Language/Introduction/Variables/Prototypes%20and%20Fill%20Items.htm), if `≡` or any number is specified as Argument.
 
 ## Examples
 
