@@ -56,28 +56,28 @@ Is the result of the transformed input, for QuadR, and a formatted list
 
 Hello, World!
 ```
-This takes an empty Input. Notice the leading empty line. What this does is replace all occurences of `''` with `'Hello, World!'`. PCRE will find one such match and, in the case of QuadR, make the replacement, and in the case of QuadS, return the string for that one match.
+This takes an empty Input. Notice the leading empty line. What this does is replace all occurences of `''` with `'Hello, World!'`. PCRE will find one such match and, in the case of QuadR, make the replacement, and in the case of QuadS, return the string for that one match. [Try it online!](https://tio.run/##KyxNTCn6/5/LIzUnJ19HITy/KCdF8f9/AA "QuadR – Try It Online")
 
 ### Number adder
 ```
 .+
 +/⍎⍵M
 ```
-This will sum the numbers on each line of the Input and return one sum on each line. The first line matches the entire input line and the second line specifies a transformation function which takes the matched text (`⍵M`), executes it (`⍎`) to convert it to numbers, and sums it `+/`. 
+This will sum the numbers on each line of the Input and return one sum on each line. The first line matches the entire input line and the second line specifies a transformation function which takes the matched text (`⍵M`), executes it (`⍎`) to convert it to numbers, and sums it `+/`. [Try it online!](https://tio.run/##KyxNTCn6/19Pm0tb/1Fv36Perb7//xsrGCqYcBkpmANpCwA "QuadR – Try It Online")
 
 ### Primality checker
 ```
-.+
+1+
 ~⍵L∊∘.×⍨1↓⍳⍵L
 ```
-Each line of the Input is an integer in unary (using any symbol). For each one, it takes the length (`⍵L`), generates the integers from 1 to that (`⍳`), drop the first one (`1↓`), creates a multiplication table (`∘.×⍨`), asks whether the match length is a member of that (`⍵L∊`), and negates the result.
+Each line of the Input is an integer in unary (using `1`s). For eachsuch number, it takes the length (`⍵L`), generates the integers from 1 to that (`⍳`), drop the first one (`1↓`), creates a multiplication table (`∘.×⍨`), asks whether the match length is a member of that (`⍵L∊`), and negates the result. [Try it online!](https://tio.run/##KyxNTCn6/99Qm6vuUe9Wn0cdXY86Zugdnv6od4Xho7bJj3o3g4SBChQMQQiMDblABIQJp@C0IQA "QuadR – Try It Online")
 
 ### Given a string of [a-zA-Z ] reverse every word (QuadR only)
 ```
 \w+
 ⌽⍵M
 ```
-The first line matches every run of word character, while the second line reverses (`⌽`) the match (`⍵M`)
+The first line matches every run of word character, while the second line reverses (`⌽`) the match (`⍵M`). [Try it online!](https://tio.run/##KyxNTCn6/z@mXJvrUc/eR71bff//D8lIVUjLLCouUcjJzEtVyE0sSc5ILVZILUstqlQoKs1TyE9TKM8vSlFIzkgsSkwuSS3SUSjPyMxJVSgB6ixOTc7PS4FoLQLpKQbq1QAargmWBpsG5ANt0tQDAA "QuadR – Try It Online")
 
 ### Transform into upper/lower case (QuadR only)
 ```
@@ -86,13 +86,13 @@ The first line matches every run of word character, while the second line revers
 \u1\l2
 \u&
 ```
-The first line matches all runs of two characters and the third line converts the first to uppercase and the second to lowercase. The second line matches any leftover trailing character and the fourth line converts it to uppercase.
+The first line matches all runs of two characters and the third line converts the first to uppercase and the second to lowercase. The second line matches any leftover trailing character and the fourth line converts it to uppercase. [Try it online!](https://tio.run/##XY7BCsIwDIbve4qcRC8FfZYddwltagu1mWnq8OlrdbAxIRDIl//ne1Z00trZXPoMZpjqdUq3vk6tjYHARykKKWaCB6oNVABTAqm5AHvQhcEGFLRK0lF2oD2lIYpbU5bzi0TL7762KUOdZxKLhbZIof7pvizxsjIzjDs4KuQ3JPLKvRpUMHZ630W2Us9VNPyJxKOB@QA "QuadR – Try It Online")
 
 ### [What my dog really hears](https://codegolf.stackexchange.com/q/119718/43319)
 ```
 rex
 \w
-\0
+&
 *
 ```
-Only 11 bytes plus 1 byte for the `i` option.
+The first line matches all cases of REX and the second all other word characters. The third line replaces all occorances of REX with themselves and the fourth line replaces all other word characters with stars. [Try it online!](https://tio.run/##HY6xDsIwEEP3fIXbASSE8h8MLIgFieXUROUgzYnkAs3Xh5TF0rNly@9CLrWW/GruX7Mzh9Yufj3iBJXgUKUginaAE@iD84CblH3yWOjFccbiQXFOFb02mC4I/PEZHDcnUHTWXAUThYD/8rNkRaaKseNozbn2UMEZs1fdJilK/8OTbfwD "QuadR – Try It Online")
