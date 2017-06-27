@@ -12,7 +12,7 @@ See [PCRE Regular Expression Syntax Summary](http://help.dyalog.com/16.0/Content
 
 See [the documention](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm) under **transformation pattern** for details about transformation patterns.
 
-If the last line of Code includes the character `⍵` (U+2375; APL Functional Symbol Omega) then that line is instead a transformation function body and will be wrapped in curly braces. All preceding Code lines are then search patterns. References to members of the transformation function's argument (a namespace) can optionally be shortened as follows:
+If the last line of Code includes the character `⍵` (U+2375; APL Functional Symbol Omega), all preceding Code lines are search patterns and the last line is a transformation in the form of a [Dyalog APL dfn](http://help.dyalog.com/16.0/Content/Language/Defined%20Functions%20and%20Operators/DynamicFunctions/Dynamic%20Functions%20and%20Operators.htm). The function body will be wrapped in curly braces and multiple statements must be separated by diamonds (`⋄`) rather than newlines, as the function must stay on one line.  References to members of the transformation function's argument (a namespace) can optionally be shortened as follows:
 
  - `⍵B` is shorthand for `⍵.Block`
  - `⍵b` is shorthand for `⍵.BlockNum`
@@ -53,7 +53,7 @@ Is the result of the transformed input, for QuadR, and a formatted list
 
 Hello, World!
 ```
-This takes an empty Input. Notice the leading empty line. What this does is replace all occurences of `''` with 'Hello, World!'. PCRE will fine one such match and, in the case of QuadR, make the replacement, and in the case of QuadS, return the string for that one match.
+This takes an empty Input. Notice the leading empty line. What this does is replace all occurences of `''` with `'Hello, World!'`. PCRE will find one such match and, in the case of QuadR, make the replacement, and in the case of QuadS, return the string for that one match.
 
 ### Number adder
 ```
