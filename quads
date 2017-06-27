@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+export DYALOG=$1
+export MAXWS=128M WSPATH=$DYALOG/ws
+
+cat <<- . | "$DYALOG/dyalog" -script
+	⎕PW←9999
+	{}2⎕FIX'file://$(dirname "$BASH_SOURCE")/Run.dyalog'
+	'$2'('S'Run '${@:4}')'$3'
+.
