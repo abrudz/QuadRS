@@ -51,10 +51,15 @@
      :Else
          q.repeat←''
      :EndIf
+     :If ×≢options
+         q.options←'⍠',∊{' (',(Quote⊃⍵),' ',({0 1∊⍨⊂⍵:⍕⍵ ⋄ '''',⍵,''''}⊃⌽⍵),')'}¨options
+     :Else
+         q.options←''
+     :EndIf
      q.op←s r/'SR'
      q.postproc←4↓postproc
      q.postproc,←(hasrepeat∧s)/(''≡q.postproc)↓'∘',combine
-     output←q.(postproc,from,'⎕',op,to,repeat)
+     output←q.(postproc,from,'⎕',op,to,options,repeat)
  :Else
      :Trap 6 11
          :If r
