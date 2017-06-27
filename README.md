@@ -31,7 +31,7 @@ See [the documention](http://help.dyalog.com/16.0/Content/Language/System%20Func
 This is the input document – the data which is to be modified. Leave this blank for programs that produce output without input.
  
 ### Arguments
-This field accepts the options (using `⍠`) to apply, as follows:
+These fields accepts the options (using `⍠`) to apply, as follows:
  
  - `g` is shorthand for `'Greedy' 0`
  - `i` is shorthand for `'IC' 1`
@@ -42,7 +42,9 @@ This field accepts the options (using `⍠`) to apply, as follows:
  - `o` is shorthand for `'OM' 1`
  
 See [the Options documention](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm#kanchor706) for details.
- 
+
+The entire search/replace call can optionally be repeated by adding a numeric argument, or until no furthor transformations can be done by adding the argument `≡`. This is equivalent to appending `⍣N` or `⍣≡` in Dyalog APL.
+
 ### Output
 
 Is the result of the transformed input, for QuadR, and a formatted list
