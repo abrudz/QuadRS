@@ -22,14 +22,16 @@ If the last line of Code includes the character `⍵` (U+2375; APL Functional Sy
  - `⍵O` is shorthand for `⍵.Offsets`
  - `⍵L` is shorthand for `⍵.Lengths`
  - `⍵N` is shorthand for `⍵.Names`
+
+The result of the transformation function will be formatted and raveled before returning the result to ⎕R or ⎕S.
+
+See [the documention](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm) under **Transformation Function** for details.
  
- See [the documention](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm) under **Transformation Function** for details.
+### Input
+This is the input document – the data which is to be modified. Leave this blank for programs that produce output without input.
  
- ### Input
- This is the input document – the data which is to be modified. Leave this blank for programs that produce output without input.
- 
- ### Arguments
- This field accepts the options (using `⍠`) to apply, as follows:
+### Arguments
+This field accepts the options (using `⍠`) to apply, as follows:
  
  - `g` is shorthand for `'Greedy' 0`; 
  - `i` is shorthand for `'IC' 1`
@@ -38,4 +40,31 @@ If the last line of Code includes the character `⍵` (U+2375; APL Functional Sy
  - `a` is shorthand for `'DotAll' '1'`
  - `u` is shorthand for `'UCP' 1`
  
- See [the Options documention](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm#kanchor706) for details.
+See [the Options documention](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm#kanchor706) for details.
+ 
+### Output
+
+Is the result of the transformed input, for QuadR, and a formatted list
+
+## Examples
+
+### Hello, World!
+```
+
+Hello, World!
+```
+This takes an empty Input. Notice the leading empty line. What this does is replace all occurences of `''` with 'Hello, World!'. PCRE will fine one such match and, in the case of QuadR, make the replacement, and in the case of QuadS, return the string for that one match.
+
+### Number adder
+```
+.+
++/⍎⍵M
+```
+This will sum the numbers on each line of the Input and return one sum on each line. The first line matches the entire input line and the second line specifies a transformation function which takes the matched text (`⍵M`), executes it (`⍎`) to convert it to numbers, and sums it `+/`. 
+
+### Primality checker
+```
+.+
+~⍵L∊∘.×⍨1↓⍳⍵L
+```
+Each line of the Input is an integer in unary (using any symbol). For each one, it takes the length (`⍵L`), generates the integers from 1 to that (`⍳`), drop the first one (`1↓`), creates a multiplication table (`∘.×⍨`), asks whether the match length is a member of that (`⍵L∊`), and negates the result.
