@@ -85,3 +85,12 @@ The first line matches every run of word character, while the second line revers
 \u&
 ```
 The first line matches all runs of two characters and the third line converts the first to uppercase and the second to lowercase. The second line matches any leftover trailing character and the fourth line converts it to uppercase.
+
+### [What my dog really hears](https://codegolf.stackexchange.com/q/119718/43319)
+```
+rex
+\w
+\0
+*
+```
+Only 11 bytes plus 1 byte for the `i` option.
