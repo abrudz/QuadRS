@@ -33,9 +33,9 @@ This is the input document – the data which is to be modified. Leave this blan
 ### Arguments
 This field accepts the options (using `⍠`) to apply, as follows:
  
- - `g` is shorthand for `'Greedy' 0`; 
+ - `g` is shorthand for `'Greedy' 0`
  - `i` is shorthand for `'IC' 1`
- - `d` is shorthand for `Mode' 'D'`
+ - `d` is shorthand for `'Mode' 'D'`
  - `m` is shorthand for `'Mode' 'M'`
  - `a` is shorthand for `'DotAll' '1'`
  - `u` is shorthand for `'UCP' 1`
