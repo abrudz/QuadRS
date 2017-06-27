@@ -11,7 +11,7 @@
  repeat←⍎{×≢⍵:⍵ ⋄ '1'}args∩'≡',⎕D ⍝ extract repetition, if any, else 1
  ⍝ select options:
  options←('ResultText' 'Simple')('Greedy' 0)('IC' 1)('Mode' 'D')('Mode' 'M')('DotAll' '1')('UCP' 1)('OM' 1)/⍨1,'gidmauo'∊819⌶args~' -'
- s r←(∨/∊∘'sabcA')¨'Ss' 'Rr'
+ s r←(∨/∊∘op)¨'Ss' 'Rr'
  options↓⍨←s ⍝ ResultText is not for ⎕S
 
  :If 2|≢regexes ⍝ odd number of strings → many-to-one
