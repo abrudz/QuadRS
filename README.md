@@ -39,6 +39,7 @@ This field accepts the options (using `⍠`) to apply, as follows:
  - `m` is shorthand for `'Mode' 'M'`
  - `a` is shorthand for `'DotAll' '1'`
  - `u` is shorthand for `'UCP' 1`
+ - `o` is shorthand for `'OM' 1`
  
 See [the Options documention](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm#kanchor706) for details.
  
