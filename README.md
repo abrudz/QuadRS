@@ -5,14 +5,14 @@ QuadR and QuadS are golfing languages which each are barely more than thin cover
 
 ⎕R and⎕S are PCRE based, but enhanced by Dyalog to include application of custom regular expressions-style transformations and arbitrary APL code (including preservation of information from call to call) on each match.
 
-Feel free to contact me, [Adám](https://stackexchange.com/users/3114363/ad%C3%A1m) in Stack Exchange's [APL chat room](https://chat.stackexchange.com/rooms/52405/apl) to learn more about QuadR, QuadS, and Dyalog APL.
+Feel free to contact me, [Adám](https://stackexchange.com/users/3114363/ad%C3%A1m), in Stack Exchange's [APL chat room](https://chat.stackexchange.com/rooms/52405/apl) to learn more about QuadR, QuadS, and Dyalog APL.
 
 ## User guide
 
 [Try It Online](https://tio.run/#) is a code testing website for many programming languages, both practical and recreational ones, made by Stack Exchange user [Dennis](https://codegolf.stackexchange.com/users/12012). The following describes the relevant fields when using [QuadR on TIO](https://tio.run/#quadr) and [QuadS on TIO](https://tio.run/#quads). 
 
 ### Code
-In the simple case, the number of lines determines how the lines are used. If there are an even number of lines, the first half of the lines are *search patterns* (the left operand) while the last half of the lines are *Transformation patterns* (the right operand). If there are an odd number of lines, all but the last one are search patterns and the last one is a common transformation pattern for all of the search patterns.
+In the simple case, the number of lines determines how the lines are used. If there are an even number of lines, the first half of the lines are *search patterns* (the left operand) while the last half of the lines are *transformation patterns* (the right operand). If there are an odd number of lines, all but the last one are search patterns and the last one is a common transformation pattern for all of the search patterns.
 
 See [PCRE Regular Expression Syntax Summary](http://help.dyalog.com/16.0/Content/Language/Appendices/PCRE%20Regular%20Expression%20Syntax%20Summary.htm) and [PCRE Regular Expression Details](http://help.dyalog.com/16.0/Content/Language/Appendices/PCRE%20Regular%20Expression%20Details.htm) for details about the search patterns.
 
