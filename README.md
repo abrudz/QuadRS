@@ -1,7 +1,7 @@
 # QuadR and QuadS
 
 ## Introduction
-QuadR and QuadS are golfing languages which each are barely more than thin covers for [Dyalog APL](https://www.dyalog.com/)'s ⎕R [Replace operator](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm) and ⎕S [Search operator](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm). QuadR and QuadS code can in fact easily be translated to normal Dyalog APL. See [Arguments](https://github.com/abrudz/QuadRS#arguments) for information on how to do that.
+QuadR and QuadS are golfing languages which each are barely more than thin covers for [Dyalog APL](https://www.dyalog.com/)'s ⎕R [Replace operator](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm) and ⎕S [Search operator](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm). QuadR and QuadS code can in fact easily be translated to normal Dyalog APL. See [Arguments](#arguments) for information on how to do that.
 
 ⎕R and⎕S are PCRE based, but enhanced by Dyalog to include application of custom regular expressions-style transformations and arbitrary APL code (including preservation of information from call to call) on each match.
 
@@ -51,7 +51,7 @@ Options for ⎕R and ⎕S,  using `⍠` (see [documentation for Variant](http://
 
 See [the Options documention](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm#kanchor706) for details.
 
-The entire search/replace call can optionally be repeated *N* times by adding a numeric argument, or until no further transformations can be done by adding the argument `≡`. This is equivalent to appending `⍣N` or `⍣≡` in Dyalog APL. See [documentation for the Power Operator](http://help.dyalog.com/16.0/Content/Language/Primitive%20Operators/Power%20Operator.htm) for details and [the last example](https://github.com/abrudz/QuadRS/blob/master/README.md#build-me-a-city-quads-with-1-flag) for an example.
+The entire search/replace call can optionally be repeated *N* times by adding a numeric argument, or until no further transformations can be done by adding the argument `≡`. This is equivalent to appending `⍣N` or `⍣≡` in Dyalog APL. See [documentation for the Power Operator](http://help.dyalog.com/16.0/Content/Language/Primitive%20Operators/Power%20Operator.htm) for details and [the last example](#build-me-a-city-quads-with-1-flag) for an example.
 
 `?` is a special argument which in addition to running the program, will output a proper APL function equivalent (including Arguments and post-processing functions, if applicable) to the Debug field. Use this tool to learn the proper syntax of ⎕R and ⎕S.
 
