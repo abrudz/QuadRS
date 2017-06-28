@@ -9,7 +9,7 @@ Feel free to contact me, [Adám](https://stackexchange.com/users/3114363/ad%C3%A
 
 ## User guide
 
-[Try It Online](https://tio.run/#) is a code testing website for many programming languages, both practical and recreational ones, made by Stack Exchange user [Dennis](https://codegolf.stackexchange.com/users/12012). The following describes the relevant fields when using [QuadR on TIO](https://tio.run/#quadr) and [QuadS on TIO](https://tio.run/#quads). 
+[Try It Online](https://tio.run/#home) is a code testing website for many programming languages, both practical and recreational ones, made by Stack Exchange user [Dennis](https://codegolf.stackexchange.com/users/12012). The following describes the relevant fields when using [QuadR on TIO](https://tio.run/#quadr) and [QuadS on TIO](https://tio.run/#quads). 
 
 ### Code
 In the simple case, the number of lines determines how the lines are used. If there are an even number of lines, the first half of the lines are *search patterns* (the left operand) while the last half of the lines are *transformation patterns* (the right operand). If there are an odd number of lines, all but the last one are search patterns and the last one is a common transformation pattern for all of the search patterns. (See the last paragraph in this section for an exception to this odd/even rule.)
@@ -46,7 +46,7 @@ The entire search/replace call can optionally be repeated *N* times by adding a 
 
 ### Output
 
-Is the result of the transformed input for QuadR, and a formatted list for QuadS. QuadS will merge the list elements together, padding with [fill elements](http://help.dyalog.com/16.0/Content/Language/Introduction/Variables/Prototypes%20and%20Fill%20Items.htm), if `≡` or any number is specified as Argument.
+The result of the transformed input for QuadR, and a formatted list for QuadS. If `≡` or any number is specified as argument, QuadS will merge the list items together, padding with [fill elements](http://help.dyalog.com/16.0/Content/Language/Introduction/Variables/Prototypes%20and%20Fill%20Items.htm) if necessary, before passing the result to any post-processing functions.
 
 ## Examples
 
