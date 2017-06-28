@@ -35,7 +35,7 @@ Options for ⎕R and ⎕S,  using `⍠` (see [documentation for Variant](http://
  
 | Short | Full syntax  | | Short | Full syntax  | |Short | Full syntax |  | Short | Full syntax | 
 | ----: | ------------ | --- | ----: | ------- | --- | ----: | ---------- | --- | ----: | ------------|
-| `g`   | `'Greedy' 0` | | `d`   | `'Mode' 'D'` |  | `a`   | `'DotAll' '1'` | | `o`   | `'OM' 1`    |
+| `g`   | `'Greedy' 0` | | `d`   | `'Mode' 'D'` |  | `a`   | `'DotAll' 1` | | `o`   | `'OM' 1`    |
 | `i`   | `'IC' 1`     | | `m`   | `'Mode' 'M'` |  | `u`   | `'UCP' 1`      | |      |             |
  
 See [the Options documention](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm#kanchor706) for details.
