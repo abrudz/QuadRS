@@ -23,9 +23,7 @@ If the last line includes the character `⍵` (U+2375; APL Functional Symbol Ome
 | `⍵B` | `⍵.Block`    | | `⍵P` | `⍵.Pattern`   | | `⍵M` | `⍵.Match`   | | `⍵L` | `⍵.Lengths`  |
 | `⍵b` | `⍵.BlockNum` | | `⍵p` | `⍵.PatternNum` | | `⍵O` | `⍵.Offsets` | | `⍵N` | `⍵.Names`    |
 
-See [the ⎕R documention](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm) under **Transformation Function** for details about transformation functions.
-
-QuadR will format and ravel (flatten) the result of the transformation function before returning its result to ⎕R, since ⎕R's transformation function must return a simple character vector (string).
+QuadR will format and ravel (flatten) the result of the transformation function before returning its result to ⎕R, since ⎕R's transformation function must return a simple character vector (string). See [the ⎕R documention](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm) under **Transformation Function** for further details about transformation functions.
 
 Optionally, the code may be have one or more leading lines of post-processing dfn bodies. Like the transformation function, these are identified by the precence of `⍵`, and curly braces are added automatically. The post processing functions will be applied bottom-up: The last post-processing function will be applied to the result of ⎕R or ⎕S, and then the second-to-last will be applied to the result of that, etc. See [here](https://codegolf.stackexchange.com/a/128722/43319) for an example use of a post-processing function. Code lines dedicated to post-processing functions are not counted when determining whether there are an odd or even number of lines.
 
