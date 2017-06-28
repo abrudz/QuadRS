@@ -31,7 +31,7 @@ Optionally, the code may be have one or more leading lines of post-processing df
 This is the input document – the data which is to be modified. Leave this blank for programs that produce output without input.
  
 ### Arguments
-Options for ⎕R and ⎕S,  using `⍠` (see [documentation for Variant](http://help.dyalog.com/16.0/Content/Language/Primitive%20Operators/Variant.htm)), but in a shortened form only. The short forms correspond following full forms when using Dyalog APL:
+Options for ⎕R and ⎕S,  using `⍠` (see [documentation for Variant](http://help.dyalog.com/16.0/Content/Language/Primitive%20Operators/Variant.htm)), but in a shortened form only. The short forms correspond to the following full forms when using ⎕R and ⎕S in Dyalog APL:
  
 | Short | Full syntax  | | Short | Full syntax  | |Short | Full syntax |  | Short | Full syntax | 
 | ----: | ------------ | --- | ----: | ------- | --- | ----: | ---------- | --- | ----: | ------------|
