@@ -94,4 +94,4 @@ rex
 &
 *
 ```
-The first line matches all cases of REX (with the `i` option) and the second all other word characters. The third line replaces all occorances of REX with themselves and the fourth line replaces all other word characters with stars. [Try it online!](https://tio.run/##HY6xDsIwEEP3fIXbASSE8h8MLIgFieXUROUgzYnkAs3Xh5TF0rNly@9CLrWW/GruX7Mzh9Yufj3iBJXgUKUginaAE@iD84CblH3yWOjFccbiQXFOFb02mC4I/PEZHDcnUHTWXAUThYD/8rNkRaaKseNozbn2UMEZs1fdJilK/8OTbfwD "QuadR – Try It Online")
+The first line matches all cases of REX (with the `i` option) and the second line all other word characters. The third line replaces all occurances of REX with themselves and the fourth line replaces all other word characters with stars. [Try it online!](https://tio.run/##HY6xDsIwEEP3fIXbASSE8h8MLIgFieXUROUgzYnkAs3Xh5TF0rNly@9CLrWW/GruX7Mzh9Yufj3iBJXgUKUginaAE@iD84CblH3yWOjFccbiQXFOFb02mC4I/PEZHDcnUHTWXAUThYD/8rNkRaaKseNozbn2UMEZs1fdJilK/8OTbfwD "QuadR – Try It Online")
