@@ -12,16 +12,22 @@ Feel free to contact me, [Adám](https://stackexchange.com/users/3114363/ad%C3%A
 [Try It Online](https://tio.run/#home) is a code testing website for many programming languages, both practical and recreational ones, made by Stack Exchange user [Dennis](https://codegolf.stackexchange.com/users/12012). The following describes the relevant fields when using [QuadR on TIO](https://tio.run/#quadr) and [QuadS on TIO](https://tio.run/#quads). 
 
 ### Code
-In the simple case, the number of lines determines how the lines are used. If there are an even number of lines, the first half of the lines are *search patterns* (the left operand) while the last half of the lines are *transformation patterns* (the right operand). If there are an odd number of lines, all but the last one are search patterns and the last one is a common transformation pattern for all of the search patterns. (See the last paragraph in this section for an exception to this odd/even rule.)
+In the simple case, the number of lines determines how the lines are used. If there are an even number of lines, the first half of the lines are *search patterns* (the left operand) while the last half of the lines are *transformation patterns* (the right operand). If there are an odd number of lines, all but the last one are search patterns and the last one is a common transformation pattern for all of the search patterns. (See the last paragraph in this section for an exception to this odd/even rule) If there is only one non-function line, it will be used as transformation pattern, and the search pattern will be an empty string.
 
 See [PCRE Regular Expression Syntax Summary](http://help.dyalog.com/16.0/Content/Language/Appendices/PCRE%20Regular%20Expression%20Syntax%20Summary.htm) and [PCRE Regular Expression Details](http://help.dyalog.com/16.0/Content/Language/Appendices/PCRE%20Regular%20Expression%20Details.htm) for details about the search patterns, and [the ⎕R documention](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm) under **Transformation pattern** for details about transformation patterns.
 
 If the last line includes the character `⍵` (U+2375; APL Functional Symbol Omega), all preceding code lines are search patterns and the last line is a *transformation function* in the form of a [Dyalog APL dfn](http://help.dyalog.com/16.0/Content/Language/Defined%20Functions%20and%20Operators/DynamicFunctions/Dynamic%20Functions%20and%20Operators.htm). The function body will be wrapped in curly braces and multiple statements must be separated by diamonds (`⋄`) rather than newlines, as the function must stay on one line.  References to members of the transformation function's argument (a namespace) can optionally be shortened as follows:
 
-| Short | Full name | |Short | Full name        | | Short | Full name | | Short | Full name |
-| ----: | ------- | --- | ---: | ----------  | --- | ---: | ---------- | --- | -----: | ------------- |
-| `⍵B` | `⍵.Block`    | | `⍵P` | `⍵.Pattern`   | | `⍵M` | `⍵.Match`   | | `⍵L` | `⍵.Lengths`  |
-| `⍵b` | `⍵.BlockNum` | | `⍵p` | `⍵.PatternNum` | | `⍵O` | `⍵.Offsets` | | `⍵N` | `⍵.Names`    |
+| Short | Full name |
+| :---: | ------- |
+| `⍵B` | `⍵.Block`    | 
+| `⍵b` | `⍵.BlockNum` | 
+| `⍵P` | `⍵.Pattern`   | 
+| `⍵p` | `⍵.PatternNum` | 
+| `⍵M` | `⍵.Match`   | 
+| `⍵O` | `⍵.Offsets` |
+| `⍵L` | `⍵.Lengths`  |
+ | `⍵N` | `⍵.Names`    |
 
 QuadR will format and ravel (flatten) the result of the transformation function before returning its result to ⎕R, since ⎕R's transformation function must return a simple character vector (string). See [the ⎕R documention](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm) under **Transformation Function** for further details about transformation functions.
 
@@ -33,20 +39,29 @@ This is the input document – the data which is to be modified. Leave this blan
 ### Arguments
 Options for ⎕R and ⎕S,  using `⍠` (see [documentation for Variant](http://help.dyalog.com/16.0/Content/Language/Primitive%20Operators/Variant.htm)), but in a shortened form only. The short forms correspond to the following full forms when using ⎕R and ⎕S in Dyalog APL:
  
-| Short | Full syntax  | | Short | Full syntax  | |Short | Full syntax |  | Short | Full syntax | 
-| ----: | ------------ | --- | ----: | ------- | --- | ----: | ---------- | --- | ----: | ------------|
-| `g`   | `'Greedy' 0` | | `d`   | `'Mode' 'D'` |  | `a`   | `'DotAll' 1` | | `o`   | `'OM' 1`    |
-| `i`   | `'IC' 1`     | | `m`   | `'Mode' 'M'` |  | `u`   | `'UCP' 1`      | |      |             |
- 
+| Short | Full syntax  |
+| :---: | ------------ | 
+| `g`   | `'Greedy' 0` |
+| `i`   | `'IC' 1`     | 
+| `d`   | `'Mode' 'D'` |  
+| `m`   | `'Mode' 'M'` |  
+| `a`   | `'DotAll' 1` | 
+| `u`   | `'UCP' 1`    | 
+| `o`   | `'OM' 1`    |
+
 See [the Options documention](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm#kanchor706) for details.
 
 The entire search/replace call can optionally be repeated *N* times by adding a numeric argument, or until no further transformations can be done by adding the argument `≡`. This is equivalent to appending `⍣N` or `⍣≡` in Dyalog APL. See [documentation for the Power Operator](http://help.dyalog.com/16.0/Content/Language/Primitive%20Operators/Power%20Operator.htm) for details.
 
-`?` is a special argument which instead of running the program, will return a proper APL function equivalent, including Arguments and post-processing functions, if applicable. Use this tool to learn the proper syntax of ⎕R and ⎕S.
+`?` is a special argument which in addition to running the program, will output a proper APL function equivalent (including Arguments and post-processing functions, if applicable) to the Debug field. Use this tool to learn the proper syntax of ⎕R and ⎕S.
 
 ### Output
 
 The result of the transformed input for QuadR, and a formatted list for QuadS. If `≡` or any number is specified as argument, QuadS will merge the list items together, padding with [fill elements](http://help.dyalog.com/16.0/Content/Language/Introduction/Variables/Prototypes%20and%20Fill%20Items.htm) if necessary, before passing the result to any post-processing functions.
+
+### Debug
+
+Error messages and the APL expression equivalents will be place here. Expand the section to see them.
 
 ## Examples
 
@@ -95,3 +110,12 @@ rex
 *
 ```
 The first line matches all cases of REX (with the `i` option) and the second line all other word characters. The third line replaces all occurances of REX with themselves and the fourth line replaces all other word characters with stars. [Try it online!](https://tio.run/##HY6xDsIwEEP3fIXbASSE8h8MLIgFieXUROUgzYnkAs3Xh5TF0rNly@9CLrWW/GruX7Mzh9Yufj3iBJXgUKUginaAE@iD84CblH3yWOjFccbiQXFOFb02mC4I/PEZHDcnUHTWXAUThYD/8rNkRaaKseNozbn2UMEZs1fdJilK/8OTbfwD "QuadR – Try It Online")
+
+### [Build me a city](https://codegolf.stackexchange.com/q/128611/43319) (QuadS with `1` flag)
+
+```
+⊖⍵
+(.)\1*
+2/⍪⍵M
+```
+The first line sets up a post post-processor that will flip (`⊖`) the result (`⍵`) upside down. The second line finds runs of identical characters. The third line duplicates (`2/`) the columnified (`⍪`) match (`⍵M`). The `1` flag causes the results to be merged together. [Try it online!](https://tio.run/##KyxNTCn@//9R17RHvVu5NPQ0Ywy1uIz0H/WuAvJ9//9PTExMAoHk5MKiouLi4hIICAgo/28IAA "QuadS – Try It Online") 
