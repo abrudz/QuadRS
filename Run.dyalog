@@ -13,7 +13,7 @@
  :Trap 11 22 ⍝ accept filename or actual regex
      regexes←⊃⎕NGET regexes 1
  :EndTrap
- regexes←{,¨⍣(¯2=≡⍵)⊢⍵}Nest regexes
+ ⍎'regexes←{,¨⍣(¯2=≡⍵)⊢⍵}Nest regexes'
 
  repeat←⍎{×≢⍵:⍵ ⋄ '1'}args∩'≡',⎕D ⍝ extract repetition, if any, else 1
  hasrepeat←∨/args∊⍨'≡',⎕D
