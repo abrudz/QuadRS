@@ -1,7 +1,7 @@
 # QuadR and QuadS
 
 ## Introduction
-QuadR and QuadS are two closely golfing languages which each are barely more than thin covers for [Dyalog APL](https://www.dyalog.com/)'s ⎕R [Replace operator](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm) and ⎕S [Search operator](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm). QuadR and QuadS code can in fact easily be translated to normal Dyalog APL. See [Arguments](https://github.com/abrudz/QuadRS#arguments) for information on how to do that.
+QuadR and QuadS are golfing languages which each are barely more than thin covers for [Dyalog APL](https://www.dyalog.com/)'s ⎕R [Replace operator](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm) and ⎕S [Search operator](http://help.dyalog.com/16.0/Content/Language/System%20Functions/r.htm). QuadR and QuadS code can in fact easily be translated to normal Dyalog APL. See [Arguments](https://github.com/abrudz/QuadRS#arguments) for information on how to do that.
 
 ⎕R and⎕S are PCRE based, but enhanced by Dyalog to include application of custom regular expressions-style transformations and arbitrary APL code (including preservation of information from call to call) on each match.
 
