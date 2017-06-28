@@ -5,7 +5,7 @@ QuadR and QuadS are golfing languages which each are barely more than thin cover
 
 ⎕R and⎕S are PCRE based, but enhanced by Dyalog to include application of custom regular expressions-style transformations and arbitrary APL code (including preservation of information from call to call) on each match.
 
-Feel free to contact me, [`Adám`](https://stackexchange.com/users/3114363/ad%C3%A1m) in Stack Exchange's [APL chat room](https://chat.stackexchange.com/rooms/52405/apl) to learn more about QuadR, QuadS, and Dyalog APL.
+Feel free to contact me, [Adám](https://stackexchange.com/users/3114363/ad%C3%A1m) in Stack Exchange's [APL chat room](https://chat.stackexchange.com/rooms/52405/apl) to learn more about QuadR, QuadS, and Dyalog APL.
 
 ## User guide
 
