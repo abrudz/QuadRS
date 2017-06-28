@@ -67,10 +67,9 @@ Error messages and the APL expression equivalents will be place here. Expand the
 
 ### Hello, World!
 ```
-
 Hello, World!
 ```
-This takes an empty Input. Notice the leading empty line. What this does is replace all occurences of `''` with `'Hello, World!'`. PCRE will find one such match and, in the case of QuadR, make the replacement, and in the case of QuadS, return the string for that one match. [Try it online!](https://tio.run/##KyxNTCn6/5/LIzUnJ19HITy/KCdF8f9/AA "QuadR – Try It Online")
+As a single non-function line this replaces all occurences of `''` with `'Hello, World!'`. PCRE will find one such match and, in the case of QuadR, make the replacement, and in the case of QuadS, return the string for that one match. [Try it online!](https://tio.run/##KyxNTCn6/98jNScnX0chPL8oJ0Xx/38A "QuadR – Try It Online")
 
 ### Summation
 ```
