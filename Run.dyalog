@@ -3,8 +3,8 @@
 
  n←⎕UCS 10 ⍝ newline
  a←⎕UCS 39 ⍝ apostrofe
- Nest←{⊂⍣(1=≡,⍵)⊢⍵}
- Quote←{a,a,⍨⍵/⍨1+⍵=a}
+ ⍎'Nest←{⊂⍣(1=≡,⍵)⊢⍵}'
+ ⍎'Quote←{a,a,⍨⍵/⍨1+⍵=a}'
 
  :Trap 11 22 ⍝ accept filename or actual input
      input←input ⎕NTIE 0
