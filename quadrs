@@ -8,5 +8,5 @@ cp $2 .coden.tio && echo "" >> .coden.tio
 cat <<- . | "$DYALOG/dyalog" -script
 	⎕PW←9999
 	{}2⎕FIX'file://$(dirname "$BASH_SOURCE")/Run.dyalog'
-	'.coden.tio'('$5'Run '${@:4}')'$3'
+	'.coden.tio'('$4'Run '${@:5}')'$3'
 .
