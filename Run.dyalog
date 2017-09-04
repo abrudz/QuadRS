@@ -1,4 +1,4 @@
-﻿ output←regexes(op Run args)input;from;to;options;lines;Expand;repeat;s;r;last;fns;q;hasrepeat;postproc;combine;Quote;Nest;a;n
+∇ output←regexes(op Run args)input;from;to;options;lines;Expand;repeat;s;r;last;fns;q;hasrepeat;postproc;combine;Quote;Nest;a;n
  output←⍬⊤⍬ ⍝ default result is empty matrix
 
  n←⎕UCS 10 ⍝ newline
@@ -105,3 +105,4 @@
  :Else
      ⍞←'*** Left operand must be ''R'' or ''S'' ***'
  :EndIf
+∇
