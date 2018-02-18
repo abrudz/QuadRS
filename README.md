@@ -81,9 +81,9 @@ This will sum the numbers on each line of the Input and return one sum on each l
 ### Primality checker
 ```
 1+
-~⍵L∊∘.×⍨1↓⍳⍵L
+~⍵L∊1,,∘.×⍨1↓⍳⍵L
 ```
-Each line of the Input is an integer in unary (using `1`s). For each such number, it takes the length (`⍵L`), generates the integers from 1 to that (`⍳`), drops the first number (`1↓`), creates a multiplication table (`∘.×⍨`), asks whether the match (`⍵L`) length is a member of that (`∊`), and finally negates the result. [Try it online!](https://tio.run/##KyxNTCn6/99Qm6vuUe9Wn0cdXY86Zugdnv6od4Xho7bJj3o3g4SBChQMQQiMDblABIQJp@C0IQA "QuadR – Try It Online")
+Each line of the Input is an integer in unary (using `1`s). For each such number, it takes the length (`⍵L`), generates the integers from 1 to that (`⍳`), drops the first number (`1↓`), creates a multiplication table (`∘.×⍨`), flattens it (`,`), prepends one (`1,`), asks whether the match length (`⍵L`) is a member of that (`∊`), and finally negates the result. [Try it online!](https://tio.run/##KyxNTCn6/99Qm6vuUe9Wn0cdXYY6Oo86Zugdnv6od4Xho7bJj3o3g2SAahQMQQiMDblABIQJp@C0IQA "QuadR – Try It Online")
 
 ### Given a string of `[a-zA-Z ]` reverse every word (QuadR only)
 ```
